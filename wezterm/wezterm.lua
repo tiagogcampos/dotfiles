@@ -2,8 +2,8 @@ local wezterm = require("wezterm")
 
 local config = {}
 
--- config.color_scheme = "Catppuccin Mocha"
-config.color_scheme = "tokyonight_moon"
+config.color_scheme = "Dracula (Official)"
+
 config.font = wezterm.font "SF Mono Nerd Font"
 config.font_size = 16.0
 
