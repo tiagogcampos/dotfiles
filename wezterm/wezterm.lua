@@ -1,12 +1,24 @@
-local wezterm = require("wezterm")
-
+local wezterm = require 'wezterm'
 local config = {}
 
-config.color_scheme = "Dracula (Official)"
+if wezterm.config_builder then
+  config = wezterm.config_builder()
+end
 
-config.font = wezterm.font "SF Mono Nerd Font"
-config.font_size = 16.0
+local is_windows = os.getenv("windir") ~= nil
 
-config.enable_tab_bar = false
+print(is_windows)
+
+if is_windows then
+  config.default_domain = 'WSL:openSUSE-Tumbleweed'
+end
+config.font = wezterm.font 'GeistMono Nerd Font'
+config.font_size = 15.0
+
+config.color_scheme = 'rose-pine'
+
+config.window_decorations = "RESIZE"
+config.hide_tab_bar_if_only_one_tab = true
+config.tab_bar_at_bottom = true
 
 return config
